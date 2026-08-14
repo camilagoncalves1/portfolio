@@ -333,10 +333,14 @@
     list-style:none;
   }
   .pub-list li{
-    padding:12px 0;
-    border-top:1px solid var(--line);
-    font-size:0.95rem;
-    color:var(--ink-dim);
+  padding:12px 0;
+  border-top:1px solid var(--line);
+  font-size:0.95rem;
+  color:var(--ink-dim);
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  flex-wrap:wrap;
   }
   .pub-list li:first-child{border-top:none;padding-top:14px;}
   .pub-list .yr{
@@ -423,6 +427,48 @@
     html{scroll-behavior:auto;}
     .reveal{opacity:1;transform:none;transition:none;}
   }
+  * ===== publication action buttons ===== */
+.pub-actions{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  flex-wrap:wrap;
+  margin-left:auto;
+  flex-shrink:0;
+}
+.pub-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  font-weight:500;
+  color:var(--ink-faint);
+  background:transparent;
+  border:1px solid var(--line);
+  padding:2px 8px;
+  border-radius:var(--radius);
+  transition:all 0.2s ease;
+  cursor:pointer;
+  text-decoration:none;
+  letter-spacing:0.02em;
+}
+.pub-btn:hover{
+  background:rgba(163,214,92,0.1);
+  border-color:var(--green-dim);
+  color:var(--green);
+  text-decoration:none;
+}
+.pub-btn .icon{
+  font-size:10px;
+}
+.pub-btn.pdf{ color:var(--amber); }
+.pub-btn.pdf:hover{ border-color:var(--amber); color:var(--amber); }
+.pub-btn.doi{ color:var(--green-dim); }
+.pub-btn.doi:hover{ border-color:var(--green); color:var(--green); }
+.pub-btn.cite{ color:var(--ink-dim); }
+.pub-btn.cite:hover{ border-color:var(--ink-dim); color:var(--ink); }
+}
 </style>
 </head>
 <body>
@@ -492,7 +538,7 @@
       <div class="tl-body">
         <h3>Graduação em Geografia — Licenciatura e Bacharelado</h3>
         <p class="place">Universidade Federal Rural do Rio de Janeiro (UFRRJ) · Orientador: Gustavo Mota de Sousa</p>
-        <p>TCC: "Mapeamento e análise multitemporal da dinâmica de cobertura e uso da terra da região do Oeste Metropolitano do Rio de Janeiro."</p>
+        <p> Base da mesma linha de pesquisa em cobertura e uso da terra no Oeste Metropolitano do Rio de Janeiro.</p>
       </div>
     </div>
 
@@ -500,8 +546,8 @@
       <div class="tl-date">2018 — 2022</div>
       <div class="tl-body">
         <h3>Graduação em Geografia — Licenciatura e Bacharelado</h3>
-        <p class="place">Universidade Federal Rural do Rio de Janeiro (UFRRJ)</p>
-        <p>Base da mesma linha de pesquisa em cobertura e uso da terra no Oeste Metropolitano do Rio de Janeiro.</p>
+        <p class="place">Universidade Federal Rural do Rio de Janeiro (UFRRJ) · Orientador: Gustavo Mota de Sousa</p>
+        <p> TCC: "Mapeamento e análise multitemporal da dinâmica de cobertura e uso da terra da região do Oeste Metropolitano do Rio de Janeiro."</p> 
       </div>
     </div>
 
@@ -636,47 +682,163 @@
     </div>
   </section>
 
-  <section id="publicacoes" class="reveal">
+ <section id="publicacoes" class="reveal">
     <p class="eyebrow">04 — Registro</p>
     <h2 class="h-title">Publicações &amp; produção técnica</h2>
 
     <details class="pub-group" open>
       <summary>Artigos aceitos para publicação <span class="count">2</span></summary>
       <ul class="pub-list">
-        <li><span class="yr">2026</span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento e análise multitemporal da dinâmica de cobertura da terra na região do oeste metropolitano do Rio de Janeiro. <span class="ven">Revista Tamoios</span></li>
-        <li><span class="yr">2024</span><span class="au">Ojeda, A.P.W.; Santos, C.G.; Garcia Junior, C.P.G.; Conceição, G.W.; Carvalho, L.P.C.F.</span> — SAFE: georreferenciamento de assaltos em ônibus no estado do Rio de Janeiro. <span class="ven">FOCO (Faculdade Novo Milênio)</span></li>
+        <li>
+          <span class="yr">2026</span>
+          <span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento e análise multitemporal da dinâmica de cobertura da terra na região do oeste metropolitano do Rio de Janeiro. <span class="ven">Revista Tamoios</span></span>
+          <span class="pub-actions">
+            <a href="https://www.e-publicacoes.uerj.br/tamoios/article/view/87967/57086" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="https://www.e-publicacoes.uerj.br/tamoios/article/view/87967" class="pub-btn doi" aria-label="DOI" target="_blank" rel="noopener"> DOI</a>
+            <a href="GONÇALVES DOS SANTOS, Camila; MOTA DE SOUSA, Gustavo. Mapeamento e análise multitemporal da dinâmica de cobertura da terra na região do oeste metropolitano do Rio de Janeiro. Revista Tamoios, São Gonçalo, v. 22, n. 1, 2026. DOI: 10.12957/tamoios.2026.87967. Disponível em: https://www.e-publicacoes.uerj.br/tamoios/article/view/87967." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <span><span class="au">Ojeda, A.P.W.; Santos, C.G.; Garcia Junior, C.P.G.; Conceição, G.W.; Carvalho, L.P.C.F.</span> — SAFE: georreferenciamento de assaltos em ônibus no estado do Rio de Janeiro. <span class="ven">FOCO (Faculdade Novo Milênio)</span></span>
+          <span class="pub-actions">
+            <a href="https://ojs.focopublicacoes.com.br/foco/article/view/6332/4613" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="https://doi.org/10.54751/revistafoco.v17n10-005" class="pub-btn doi" aria-label="DOI" target="_blank" rel="noopener"> DOI</a>
+            <a href="Ojeda, A. P. W., Santos, C. G. dos, Garcia Junior, C. P. G., Conceição, G. W. da, & Carvalho, L. P. C. F. de. (2024). SAFE: GEORREFERENCIAMENTO DE ASSALTOS EM ÔNIBUS NO ESTADO DO RIO DE JANEIRO. REVISTA FOCO, 17(10), e6332. https://doi.org/10.54751/revistafoco.v17n10-005" class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
       </ul>
     </details>
 
     <details class="pub-group">
       <summary>Trabalhos completos em anais de congressos <span class="count">6</span></summary>
       <ul class="pub-list">
-        <li><span class="yr">2022</span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — O uso da estimativa de densidade de kernel para a análise de ocorrência de incêndios no Oeste Metropolitano Fluminense. <span class="ven">VI JGEOTEC</span></li>
-        <li><span class="yr">2022</span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento da cobertura da terra do Oeste Metropolitano do Rio de Janeiro (OMRJ). <span class="ven">VI JGEOTEC</span></li>
-        <li><span class="yr">2022</span><span class="au">Ferreira, P.R.P.; Santos, C.G.; Sousa, G.M.</span> — Análise espacial da taxa de prevalência e da taxa de mortalidade da covid-19 no estado do Rio de Janeiro (2020–2022). <span class="ven">VI JGEOTEC</span></li>
-        <li><span class="yr">2021</span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — Análise da ocorrência de incêndios florestais no Oeste Metropolitano do Rio de Janeiro. <span class="ven">XIV ENANPEGE</span>, p. 1–16</li>
-        <li><span class="yr">2020</span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento do avanço dos casos confirmados e de óbitos da covid-19 na Região Metropolitana do Rio de Janeiro. <span class="ven">V JGEOTEC</span>, p. 418–427</li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — O uso da estimativa de densidade de kernel para a análise de ocorrência de incêndios no Oeste Metropolitano Fluminense. <span class="ven">VI JGEOTEC</span></span>
+          <span class="pub-actions">
+            <a href="https://jgeotec.com.br/wp-content/uploads/2023/03/O-USO-DA-ESTIMATIVA-DE-DENSIDADE-DE-KERNEL-PARA-A-ANALISE-DE-OCORRENCIA-DE-INCENDIOS-NO-OESTE-METROPOLITANO-FLUMINENSE.pdf" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="RODRIGUEZ, M. R. ; SANTOS, C. G. ; SOUSA, G. M. . O USO DA ESTIMATIVA DE DENSIDADE DE KERNEL PARA A ANÁLISE DE OCORRÊNCIA DE INCÊNDIOS NO OESTE METROPOLITANO FLUMINENSE. In: VI JGEOTEC, 2022, São Gonçalo. Anais da VI Jornada de Geotecnologias do Estado do Rio de Janeiro, 2022." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento da cobertura da terra do Oeste Metropolitano do Rio de Janeiro (OMRJ). <span class="ven">VI JGEOTEC</span></span>
+          <span class="pub-actions">
+            <a href="https://jgeotec.com.br/wp-content/uploads/2023/03/MAPEAMENTO-DA-COBERTURA-DA-TERRA-DO-OESTE-METROPOLITANO-DO-RIO-DE-JANEIRO-OMRJ.pdf" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="SANTOS, C. G.; SOUSA, G. M. . Mapeamento da cobertura da terra do Oeste Metropolitano do Rio de Janeiro (OMRJ). In: VI Jornada de Geotecnologias do Estado do Rio de Janeiro (JGEOTEC 2022), 2022, Rio de Janeiro. VI JGEOTEC. São Gonçalo, RJ, 2022." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Ferreira, P.R.P.; Santos, C.G.; Sousa, G.M.</span> — Análise espacial da taxa de prevalência e da taxa de mortalidade da covid-19 no estado do Rio de Janeiro (2020–2022). <span class="ven">VI JGEOTEC</span></span>
+          <span class="pub-actions">
+            <a href="https://jgeotec.com.br/wp-content/uploads/2023/03/ANALISE-ESPACIAL-DA-TAXA-DE-PREVALENCIA-E-DA-TAXA-DE-MORTALIDADE-DA-COVID-19-NO-ESTADO-DO-RIO-DE-JANEIRO-NO-PERIODO-DE-2020-A-2022.pdf" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="Ferreira, P.R.P. ; SANTOS, C. G. ; SOUSA, G. M. . Análise espacial da taxa de prevalência e da taxa de mortalidade da covid-19 no estado do Rio de Janeiro no período de 2020 a 2022. In: VI Jornada de Geotecnologias do Estado do Rio de Janeiro (JGEOTEC 2022), 2022, Rio de Janeiro. VI JGEOTEC. São Gonçalo, RJ, 2022." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2021</span>
+          <span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — Análise da ocorrência de incêndios florestais no Oeste Metropolitano do Rio de Janeiro. <span class="ven">XIV ENANPEGE</span>, p. 1–16</span>
+          <span class="pub-actions">
+            <a href="https://www.editorarealize.com.br/artigo/visualizar/78410" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="RODRIGUEZ, Mateus Ribeiro et al.. Análise da ocorrência de incêndios florestais no oeste metropolitano do rio de janeiro. Anais do XIV ENANPEGE... Campina Grande: Realize Editora, 2021. Disponível em: <https://www.editorarealize.com.br/artigo/visualizar/78410>. " class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2020</span>
+          <span><span class="au">Santos, C.G.; Sousa, G.M.</span> — Mapeamento do avanço dos casos confirmados e de óbitos da covid-19 na Região Metropolitana do Rio de Janeiro. <span class="ven">V JGEOTEC</span>, p. 418–427</span>
+          <span class="pub-actions">
+            <a href="https://jgeotec.com.br/wp-content/uploads/2023/05/MAPEAMENTO-DO-AVANCO-DOS-CASOS-CONFIRMADOS-E-DE-OBITOS-DA-COVID-19-NA-REGIAO-METROPOLITANA-DO-RIO-DE-JANEIRO.pdf" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="SANTOS, C. G.; SOUSA, G. M. . Mapeamento do avanço dos casos confirmados e de óbitos da covid-19 na Região Metropolitana do Rio de Janeiro.. In: V Jornada de Geotecnologias do Estado do Rio de Janeiro - V JGEOTEC, 2020, Niterói. Anais da V JGEOTEC. Rio de Janeiro:: Geopartners, 2020. v. 1. p. 418-427." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
       </ul>
     </details>
 
     <details class="pub-group">
       <summary>Resumos expandidos &amp; resumos <span class="count">3</span></summary>
       <ul class="pub-list">
-        <li><span class="yr">2025</span><span class="au">Costa, C.A.M.; Körting, T.S.; Rocha, B.O.; Oliveira, A.C.; Santos, C.G.</span> — ConvLSTM para mapeamento de inundações em imagens bitemporais Sentinel-2. <span class="ven">V Congresso Brasileiro de Redução de Riscos e Desastres</span></li>
-        <li><span class="yr">2024</span><span class="au">Santos, C.G.; Rocha, B.O.; Körting, T.S.</span> — Sensoriamento remoto para resposta rápida à desastres. <span class="ven">SICINPE 2024</span></li>
-        <li><span class="yr">2022</span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — Análise de focos de calor e classes de uso e cobertura da terra no Oeste Metropolitano Fluminense. <span class="ven">XIX Simpósio Brasileiro de Geografia Física Aplicada</span>, EdUERJ, p. 164–167</li>
+        <li>
+          <span class="yr">2025</span>
+          <span><span class="au">Costa, C.A.M.; Körting, T.S.; Rocha, B.O.; Oliveira, A.C.; Santos, C.G.</span> — ConvLSTM para mapeamento de inundações em imagens bitemporais Sentinel-2. <span class="ven">V Congresso Brasileiro de Redução de Riscos e Desastres</span></span>
+          <span class="pub-actions">
+            <a href="#" class="pub-btn pdf" aria-label="PDF"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="#" class="pub-btn cite" aria-label="Citar">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <span><span class="au">Santos, C.G.; Rocha, B.O.; Körting, T.S.</span> — Sensoriamento remoto para resposta rápida à desastres. <span class="ven">SICINPE 2024</span></span>
+          <span class="pub-actions">
+            <a href="http://mtc-m21d.sid.inpe.br/col/sid.inpe.br/mtc-m21d/2024/08.14.18.06/doc/Relatorio_Final_Camila_Goncalves_dos_Santos_2024.pdf" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="SANTOS, C. G.; ROCHA, B. O. ; KORTING, T.S . Sensoriamento remoto para resposta rápida à desastres. In: Seminário de Iniciação Científica e Iniciação em Desenvolvimento Tecnológico e Inovação do INPE, 2024, São José dos Campos. Livro de Resumos do SICINPE 2024. São José dos Campos: Instituto Nacional de Pesquisas Espaciais (INPE), 2024." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Rodriguez, M.R.; Santos, C.G.; Sousa, G.M.</span> — Análise de focos de calor e classes de uso e cobertura da terra no Oeste Metropolitano Fluminense. <span class="ven">XIX Simpósio Brasileiro de Geografia Física Aplicada</span>, EdUERJ, p. 164–167</span>
+          <span class="pub-actions">
+            <a href="#" class="pub-btn pdf" aria-label="PDF"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="RODRIGUEZ, M. R. ; SANTOS, C. G. ; SOUSA, G. M. . ANÁLISE DE FOCOS DE CALOR E CLASSES DE USO E COBERTURA DA TERRA NO OESTE METROPOLITANO FLUMINENSE. In: XIX Simpósio Brasileiro de Geografia Física Aplicada, 2022, Rio de Janeiro. Anais do XIX Simpósio Brasileiro de Geografia Física Aplicada. Rio de Janeiro: EdUERJ, 2022. v. 1. p. 164-167." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
       </ul>
     </details>
 
     <details class="pub-group">
       <summary>Produção técnica &amp; divulgação <span class="count">6</span></summary>
       <ul class="pub-list">
-        <li><span class="yr">2024</span><span class="au">Oliveira, A.C.; Lisboa, I.D.S.; Buani, L.H.M.R.; Santos, C.G.; Rocha, B.O.; Bisinoti, J.; Körting, T.S.</span> — Nota técnica: atuação do INPE na ativação do Disasters Charter para os incêndios florestais na Bolívia (set–out/2024)</li>
-        <li><span class="yr">2022</span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — Construção de mapas para a comunidade utilizando geotecnologias livres. Curso de curta duração</li>
-        <li><span class="yr">2022</span><span class="au">Santos, C.G.; Ferreira, P.R.P.; Carvalho, B.F.S.; Sousa, G.M.</span> — Elaboração de mapas temáticos. Curso de curta duração</li>
-        <li><span class="yr">2021</span><span class="au">Santos, C.G.; Ferreira, P.R.P.; Sousa, G.M.</span> — Atlas da evolução da pandemia de covid-19 na Baixada Fluminense (mapa)</li>
-        <li><span class="yr">2020</span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — Atlas da evolução da pandemia de covid-19 no estado do Rio de Janeiro (mapa)</li>
-        <li><span class="yr">2020</span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — UFRRJ divulga mapas diários sobre avanço da covid-19 no Rio. Programa de rádio/TV</li>
+        <li>
+          <span class="yr">2024</span>
+          <span><span class="au">Oliveira, A.C.; Lisboa, I.D.S.; Buani, L.H.M.R.; Santos, C.G.; Rocha, B.O.; Bisinoti, J.; Körting, T.S.</span> — Nota técnica: atuação do INPE na ativação do Disasters Charter para os incêndios florestais na Bolívia (set–out/2024)</span>
+          <span class="pub-actions">
+            <a href="http://mtc-m21d.sid.inpe.br/col/sid.inpe.br/mtc-m21d/2024/12.05.14.08/doc/thisInformationItemHomePage.html" class="pub-btn pdf" aria-label="PDF" target="_blank" rel="noopener"> PDF</a>
+            <a href="http://urlib.net/8JMKD2USNNW34T/4CGNDPE" class="pub-btn doi" aria-label="DOI" target="_blank" rel="noopener"> DOI</a>
+            <a href="OLIVEIRA, A. C. ; LISBOA, I. D. S. ; BUANI, L. H. M. R. ; SANTOS, C. G. ; ROCHA, B. O. ; BISINOTI, J. ; KORTING, T.S . Nota técnica: Atuação do INPE na ativação do Disasters Charter referente aos incêndios florestais na Bolívia (Set-Out/2024).. 2024." class="pub-btn cite" aria-label="Citar" target="_blank" rel="noopener">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — Construção de mapas para a comunidade utilizando geotecnologias livres. Curso de curta duração</span>
+          <span class="pub-actions">
+            <a href="#" class="pub-btn pdf" aria-label="PDF"> PDF</a>
+            <a href="#" class="pub-btn doi" aria-label="DOI"> DOI</a>
+            <a href="#" class="pub-btn cite" aria-label="Citar">“ Cite</a>
+          </span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span><span class="au">Santos, C.G.; Ferreira, P.R.P.; Carvalho, B.F.S.; Sousa, G.M.</span> — Elaboração de mapas temáticos. Curso de curta duração</span>
+          <span class="pub-actions">
+          </span>
+        </li>
+        <li>
+          <span class="yr">2021</span>
+          <span><span class="au">Santos, C.G.; Ferreira, P.R.P.; Sousa, G.M.</span> — Atlas da evolução da pandemia de covid-19 na Baixada Fluminense (mapa)</span>
+          <span class="pub-actions">
+          </span>
+        </li>
+        <li>
+          <span class="yr">2020</span>
+          <span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — Atlas da evolução da pandemia de covid-19 no estado do Rio de Janeiro (mapa)</span>
+          <span class="pub-actions">
+          </span>
+        </li>
+        <li>
+          <span class="yr">2020</span>
+          <span><span class="au">Sousa, G.M.; Santos, C.G.; Ferreira, P.R.P.</span> — UFRRJ divulga mapas diários sobre avanço da covid-19 no Rio. Programa de rádio/TV</span>
+          <span class="pub-actions">
+          </span>
+        </li>
       </ul>
     </details>
   </section>
